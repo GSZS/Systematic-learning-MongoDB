@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon"
   },
+  "type": "module",
   "dependencies": {
+    "chalk": "^5.0.1",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
@@ -14,7 +16,5 @@
     "nodemon": "^2.0.16",
     "winston": "^3.7.2"
   },
-  "devDependencies": {
-    "chalk": "4.1.2"
-  }
+  "devDependencies": {}
 }

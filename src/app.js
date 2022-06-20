@@ -1,7 +1,8 @@
-const express = require("express");
-const { pj_port } = require("./config");
-const connect = require("./db");
-const Logger = require("./loaders/logger");
+import express from "express";
+import { pj_port } from "./config/index.js";
+import { connect } from "./db/index.js";
+import logger from "./loaders/logger.js";
+import { runCRUD } from "./services/example.js";
 
 async function startServer() {
   const app = express();
@@ -15,9 +16,10 @@ async function startServer() {
       connect();
     })
     .on("error", (err) => {
-      Logger.error(err);
+      logger.error(err);
       process.exit(1);
     });
+  runCRUD();
 }
 
 startServer();

@@ -1,6 +1,7 @@
 // 日志处理
-const winston = require("winston");
-const { logConfig } = require("../config");
+
+import winston from "winston";
+import { logConfig } from "../config/index.js";
 
 const transports = [];
 if (process.env.NODE_ENV !== "development") {
@@ -30,4 +31,4 @@ const LoggerInstance = winston.createLogger({
   transports,
 });
 
-module.exports = LoggerInstance;
+export default LoggerInstance;
